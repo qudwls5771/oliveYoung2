@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <style>
+        .main_customer_box .notice_area {
+            /*공지사항*/
+            position: relative;
+            overflow: hidden;
+            top: 10px;
+            /*공백*/
+            height: 75px;
+            /*높이 조정 : block이 너무 커서 / 이건 추가한거임*/
+            width: 640px;
+
+        }
+
+
+        .main_customer_box .notice_area h4 {
+            /*공지사항(h4) 글자 라인 위치*/
+            line-height: 15px
+                /*60px*/
+        }
+
+        /*새로운소식*/
+        .main_customer_box .notice_area .notice_cont {
+            /*새로운소식   후손*/
+            float: left;
+            /*글자 왼쪽으로*/
+            width: 545px;
+            /*  height: 60px; 블록 높이*/
+            /* border: 1px solid black; */
+            padding-top: 23px;
+            /* 23px padding = 보더와 요소와의 간격, 각 요소간의 보더 간격을 margin*/
+
+        }
+
+        .main_customer_box .notice_area .notice_cont>a {
+            /*  .main_customer_box .notice_area .notice_cont > a 자손*/
+            display: inline-block;
+            max-width: 430px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: #666;
+            line-height: 16px
+        }
+
+        /*--------------------------------------*/
+
+        /*---------------더보기----------------*/
+        .main_customer_box .notice_area .more_view {
+            position: absolute;
+            top: 23px;
+            /*21px*/
+            /*더보기 위치*/
+            right: 0;
+            color: #888;
+            padding-right: 15px;
+            /**/
+            background: url("https://www.oliveyoung.co.kr/pc-static-root/image/comm/ico_arrow7x11_2.png") no-repeat 100% 50%;
+            font-weight: 700
+                /*글자 진하기?*/
+        }
+
+
+
+        /*사이트 전체 영역 사이즈 조정*/
+        #Container,
+        #Footer,
+        #Header,
+        #Wrapper {
+            width: 100%;
+            min-width: 1020px
+        }
+
+        #Contents {
+            /*contents영역 사이즈 지정*/
+            width: 1020px;
+            height: 100%;
+            margin: 0 auto;
+
+        }
+
+        .main_customer_box {
+            /*고객센터 영역*/
+            position: relative;
+            /*자기 기준으로 배치*/
+            width: 100%;
+            min-height: 246px;
+            /*최소 높이 246px*/
+            margin-top: 60px;
+            /*테두리(border)와 이웃하는 요소 사이의 간격인 마진 영역의 크기를 설정*/
+            border-top: 1px solid #000
+        }
+
+        .main_customer_box h4 {
+            float: left;
+            /*왼쪽으로*/
+            width: 95px;
+            /*95px만큼 이동*/
+            font-size: 18px;
+            /*글자크기*/
+            color: #000
+                /*글자 색*/
+
+        }
+
+        @font-face {
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 400;
+            src: local(Montserrat-Light), url("https://www.oliveyoung.co.kr/pc-static-root/fonts/Montserrat-Light.woff2") format("woff2"), url("https://www.oliveyoung.co.kr/pc-static-root/fonts/Montserrat-Light.woff") format("woff")
+        }
+
+        @font-face {
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 500;
+            src: local(Montserrat), url("https://www.oliveyoung.co.kr/pc-static-root/fonts/Montserrat-Regular.woff2") format("woff2"), url("https://www.oliveyoung.co.kr/pc-static-root/fonts/Montserrat-Regular.woff") format("woff")
+        }
+
+        @font-face {
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 700;
+            src: local(Montserrat-SemiBold), url("https://www.oliveyoung.co.kr/pc-static-root/fonts/Montserrat-SemiBold.woff2") format("woff2"), url("https://www.oliveyoung.co.kr/pc-static-root/fonts/Montserrat-SemiBold.woff") format("woff")
+        }
+
+        @font-face {
+            font-family: NotoSansCJKkr;
+            font-style: normal;
+            font-weight: 400;
+            src: local(NotoSansCJKkr), url("https://www.oliveyoung.co.kr/pc-static-root/fonts/NotoSansCJKkr-Regular.woff2") format("woff2"), url("https://www.oliveyoung.co.kr/pc-static-root/fonts/NotoSansCJKkr-Regular.woff") format("woff")
+        }
+
+        @font-face {
+            font-family: NotoSansCJKkr;
+            font-style: normal;
+            font-weight: 500;
+            src: local(NotoSansCJKkr), url("https://www.oliveyoung.co.kr/pc-static-root/fonts/NotoSansCJKkr-Medium.woff2") format("woff2"), url("https://www.oliveyoung.co.kr/pc-static-root/fonts/NotoSansCJKkr-Medium.woff") format("woff")
+        }
+
+        @font-face {
+            font-family: NotoSansCJKkr;
+            font-style: normal;
+            font-weight: 700;
+            src: local(NotoSansCJKkr), url("https://www.oliveyoung.co.kr/pc-static-root/fonts/NotoSansCJKkr-Bold.woff2") format("woff2"), url("https://www.oliveyoung.co.kr/pc-static-root/fonts/NotoSansCJKkr-Bold.woff") format("woff")
+        }
+
+        @font-face {
+            font-family: Dovemayo-Medium;
+            src: url("https://www.oliveyoung.co.kr/pc-static-root/fonts/dovemayo/Dovemayo-Medium.woff") format('woff');
+            font-weight: 400;
+            font-style: normal
+        }
+
+
+        body,
+        html {
+            -webkit-font-smoothing: antialiased;
+            -webkit-font-smoothing: antialiased
+        }
+
+        a,
+        address,
+        blockquote,
+        body,
+        dd,
+        div,
+        dl,
+        dt,
+        em,
+        fieldset,
+        form,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        img,
+        input,
+        label,
+        li,
+        ol,
+        p,
+        pre,
+        select,
+        span,
+        strong,
+        textarea,
+        ul {
+            /*위치값 0으로 초기화*/
+            margin: 0;
+            padding: 0;
+            border: 0
+        }
+
+        /*
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+  }
+  */
+
+        ol,
+        /*인라인 선택자*/
+        ul {
+            list-style: none
+        }
+
+        /* table 필요없어서 삭제
+  table {
+      border-spacing: 0;
+      border: 0
+  }
+  */
+
+        button,
+        /*버튼 테두리 색 없애는 것.*/
+        img,
+        input,
+        select,
+        textarea {
+            border: 0;
+            /*테두리 0*/
+            vertical-align: top;
+            /*인라인 요소의 수직정렬*/
+            color: #666
+        }
+
+
+        button,
+        input.button,
+        input.image,
+        input.submit,
+        label {
+            cursor: pointer
+                /*마우스 커서 : 손가락 모양(클릭 가능한 버튼)*/
+        }
+
+        h4 {
+            display: block;
+            /*h4를 블록화*/
+            /*em = 상위 요소 크기의 몇 배인지로 크기를 정한다. */
+            /*margin-block-start: 1em = 텍스트 크기에 비례*/
+            /*margin-block-start: 10px = 절대 길이*/
+            /*margin-block-start: 5% = 가장 가까운 블록 컨테이너의 너비에 비례*/
+            margin-block-start: 1.33em;
+            margin-block-end: 1.33em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+            /*글자의 굵기를 정한다. n
+ormal : 보통 굵기입니다. 숫자 400과 같습니다.
+bold : 굵은 굵기입니다. 숫자 700과 같습니다.
+bolder : 상속된 값보다 굵은 굵기입니다.
+lighter : 상속된 값보다 얇은 굵기입니다.
+number : 100, 200, 300, 400, 500, 600, 700, 800, 900
+initial : 기본값으로 설정합니다.
+inherit : 부모 요소의 속성값을 상속받습니다.*/
+        }
+
+
+        hr {
+            /*수평선 그리기*/
+            display: none
+        }
+
+        a {
+            color: #666;
+            text-decoration: none
+        }
+
+
+        button,
+        input[type=submit] {
+            font-family: Montserrat, -apple-system, NotoSansCJKkr, AppleSDGothicNeo, Roboto, sans-serif;
+            font-weight: 700
+        }
+
+        body,
+        html {
+            /*전체 글의 폰트 및 글자 크기 조정*/
+            word-spacing: -1px;
+            /*단어 사이의 간격*/
+            color: #666;
+            /*글자 색*/
+            font-size: 14px;
+            /*글자 크기*/
+            line-height: 20px;
+            /*줄 높이 조정*/
+            font-family: Montserrat, -apple-system, NotoSansCJKkr, AppleSDGothicNeo, Roboto, dotum, '돋움', sans-serif;
+            letter-spacing: -.04em;
+            /*글자 사이의 간격*/
+            -webkit-font-smoothing: antialiased;
+        }
+
+
+        :focus:not(:focus-visible) {
+            /*focus선택자는 사용자가 요소를 선택(마우스 클릭, 탭)했을 경우, 해당 요소에서 사용할 수 있다.*/
+            /*focus 선택자는 주로, 선택된 요소 자체에 스타일을 지정할 때 사용된다.*/
+            /*focus-visible은 포커스된 요소에 대한 스타일 지정이 가능하다.
+focus와 용도가 유사해보이지만, 접근성 고려를 위해서는 focus-visible 선택자가 적절하다*/
+            outline: 0
+        }
+
+        .js-focus-visible :focus:not(.focus-visible) {
+            outline: 0
+        }
+
+        /*
+@media not all and (min-resolution:.001dpcm) {
+@media {
+  :focus {
+      outline: 0
+  }
+}
+}
+*/
+
+        textarea {
+            /*사용자의 요소 크기 조정 권한 : none      /  horizontal(너비 조정/가로), vertical(높이 조정/ 세로), both(양쪽길이 조정)*/
+            /*resize 속성은 inline 요소나 overflow:visible 인 block 요소엔 적용 안 됨.따라서, overflow 속성값이 "scroll", "auto" , 
+"hidden" 인지 먼저 꼭 확인. 보통은, overflow:auto 와 함께 사용.*/
+            resize: none
+        }
+
+        caption {
+            /*테이블 정의할 때(ex 사진, 삽화)*/
+            width: 0;
+            height: 0;
+            text-indent: -9999px
+        }
+
+        /*-----------고객센터----------------*/
+
+        .main_customer_box .customer_area {
+            float: left;
+            overflow: hidden;
+            position: relative;
+            width: 640px;
+            /*640px*/
+            /*padding 상↑조정*/
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            line-height: 24px
+        }
+
+        .main_customer_box .customer_area .tel_info {
+            /*전화번호*/
+            float: left;
+            width: 245px;
+            padding-left: 2px
+        }
+
+        .main_customer_box .customer_area .tel_info li+li {
+            /*온라인몰, 매장 고객센터 margin*/
+            margin-top: 10px
+        }
+
+
+        .main_customer_box .customer_area .tel_info strong {
+            /*온라인몰, 매장 고객센터 : 위치 및 글씨 색변경, 블록화*/
+            display: block;
+            margin-bottom: 3px;
+            color: #888
+        }
+
+
+        /*어느 부분에서 사용하는지 모르겠음*/
+        .main_customer_box .customer_area .tel_info .email_addr {
+
+            color: #888;
+            line-height: 16px;
+            font-weight: 700;
+        }
+
+        .main_customer_box .customer_area .online_info {
+            float: left;
+            width: auto;
+            /*300px auto를 주는 이유는 300px를 주면 넘어가기 때문에 auto를 줘서 자동조절함*/
+        }
+
+        .main_customer_box .customer_area .online_info .time_info {
+            /*고객센터 운영시간 글씨색 변화*/
+            color: #000;
+            margin-bottom: 5px;
+            font-weight: 700
+        }
+
+        .main_customer_box .customer_area .online_info>p {
+            /*문의하기, 자주하는 질문 글씨 색 및 위치변화*/
+            margin-top: 2px;
+            color: #888;
+            line-height: 22px
+        }
+
+        .main_customer_box .customer_area .online_info button {
+            /*문의하기, 자주하는 질문 버튼 변화*/
+            width: 140px;
+            height: 60px;
+            background: #aaa;
+            margin-top: 15px;
+            color: #fff;
+            font-size: 14px;
+            letter-spacing: -.02em
+        }
+
+        .main_customer_box .customer_area .online_info button>span {
+            /*1:1문의하기, 자주하는 질문 버튼 이미지*/
+            display: inline-block;
+            /*버튼 안에 있는 이미지와 글자 사이의 거리 조절*/
+            margin-right: 10px;
+            background: url("https://www.oliveyoung.co.kr/pc-static-root/image/main/ico_customer.png") no-repeat 0 0
+        }
+
+        .main_customer_box .customer_area .online_info button.btnInquiry>span {
+            /*1:1문의하기 버튼 이미지 값*/
+            width: 22px;
+            height: 27px;
+            background-position: 0 0;
+            vertical-align: middle
+        }
+
+        .main_customer_box .customer_area .online_info button.btnFaqTop {
+            /*1:1문의하기, 자주하는 질문 사이 공백*/
+            margin-left: 10px
+        }
+
+        .main_customer_box .customer_area .online_info button.btnFaqTop>span {
+            /*자주하는 질문 버튼 이미지 엘리먼트*/
+            width: 25px;
+            height: 23px;
+            background-position: 0 -27px;
+            vertical-align: middle
+                /*세로로 정렬*/
+        }
+
+
+        /*-------------올리브영 모바일 앱------------*/
+        .main_customer_box .app_down_link {
+            /*부모 엘리먼트에 속박x, 독립된 배치 문맥 : 새로운 레이어 추가 효과 비슷*/
+            /*부모 엘리먼트 위에 겹쳐서 배치 가능*/
+            /*상위 엘리먼트 중 position 속성이 relativer인 엘리먼트가 있다면, 그 중 가장 가까운
+              엘리먼트 내부에서만 자유롭게 배치 가능 전체 화면이 아닌 해당 상위 엘리먼트 기준 
+              offset속성(top, left, bottom, right)적용*/
+            position: absolute;
+            top: 10px;
+            /*10px*/
+            right: 0;
+            /*오른쪽 0위치*/
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="Container">
+        <div id="Contents">
+            <div class="main_customer_box">
+                <div class="notice_area">
+                    <h4>공지사항</h4>
+                    <div class="notice_cont">새로운 소식이 없어요.</div>
+                    <a href="https://www.oliveyoung.co.kr/store/counsel/getNoticeList.do" class="more_view">더보기</a>
+                </div>
+                <div class="customer_area">
+                    <h4>고객센터</br>이용안내</h4>
+                    <div class="tel_info">
+                        <ul>
+                            <li>
+                                <strong>온라인몰 고객센터</strong>
+                                <img src="https://image.oliveyoung.co.kr/pc-static-root/image/main/img_online_tel.png"
+                                    alt="1522-0882">
+                            </li>
+                            <li>
+                                <strong>매장 고객센터</strong>
+                                <img src="https://image.oliveyoung.co.kr/pc-static-root/image/main/img_offline_tel.png"
+                                    alt="1577-4887">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="online_info">
+                        <p class="time_info">고객센터 운영시간[평일09:00 - 18:00]</p>
+                        <p>주말 및 공휴일은 1:1문의하기를 이용해주세요</br>
+                            업무가 시작되면 바로 처리해 드리겠습니다.</p>
+                        <!--자바 스크립트로 인해 a태그를 이용해서 페이지 이동-->
+                        <a href="https://www.oliveyoung.co.kr/store/counsel/getQnaList.do?cnslSeq="><button
+                                class="btnInquiry"
+                                onclick="javascript:common.link.moveQnaList();"><span></span>1:1문의하기</button></a>
+                        <a href="https://www.oliveyoung.co.kr/store/counsel/getFaqList.do?faqLrclCd=99"><button
+                                class="btnFaqTop" onclick="javascript:common.faq.getFaqList('99');"><span></span>자주하는
+                                질문</button></a>
+                    </div>
+                </div>
+                <div class="app_down_link">
+                    <img src="https://image.oliveyoung.co.kr/pc-static-root/image/main/img_mobile_app.png"
+                        alt="올리브영 모바일 웹-앱을 설치하고 다양한 혜택을 누리세요!">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
